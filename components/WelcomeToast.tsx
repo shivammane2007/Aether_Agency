@@ -11,9 +11,11 @@ export function WelcomeToast() {
         // Check sessionStorage for the userName after redirect
         const storedName = sessionStorage.getItem("userName");
         if (storedName) {
-            setUserName(storedName);
-            setVisible(true);
-            sessionStorage.removeItem("userName");
+            setTimeout(() => {
+                setUserName(storedName);
+                setVisible(true);
+                sessionStorage.removeItem("userName");
+            }, 0);
         }
     }, []);
 
