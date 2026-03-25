@@ -38,7 +38,7 @@ export default memo(function Navbar() {
 
             <div className="flex items-center gap-4">
                 <form action={loginUser} className="hidden sm:block">
-                    <button type="submit" className="text-sm font-medium text-[#888888] hover:text-white transition-colors">Log In</button>
+                    <button type="submit" className="text-sm font-medium text-[#888888] hover:text-white transition-colors px-4 py-2">Log In</button>
                 </form>
                 <button
                     className="flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full bg-white text-black hover:bg-gray-100 transition-colors"

@@ -4,6 +4,8 @@ import { memo } from "react";
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
 import { ArrowRight } from "lucide-react";
+import { GlowingButton } from "@/components/ui/glowing-button";
+import { PulseBeams } from "@/components/ui/pulse-beams";
 
 export default memo(function HeroSection() {
     return (
@@ -37,65 +39,110 @@ export default memo(function HeroSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link
-                        href="#"
-                        className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white text-black hover:bg-white/90 text-lg font-medium transition-all duration-300">
-                        Start building for free <ArrowRight className="ml-2 w-5 h-5" />
+                    <Link href="#" className="w-full sm:w-auto">
+                        <GlowingButton 
+                            className="w-full sm:w-auto px-8 py-4 rounded-xl text-lg"
+                        >
+                            Start building for free <ArrowRight className="ml-2 w-5 h-5" />
+                        </GlowingButton>
                     </Link>
-                    <Link
-                        href="#"
-                        className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full border border-[#333] text-white hover:bg-white/5 text-lg font-medium transition-colors">
-                        Contact Enterprise Sales
+                    <Link href="#" className="w-full sm:w-auto">
+                        <GlowingButton 
+                            variant="outline"
+                            className="w-full sm:w-auto px-8 py-4 rounded-xl text-lg"
+                        >
+                            Contact Enterprise Sales
+                        </GlowingButton>
                     </Link>
                 </div>
             </div>
 
             {/* Code window preview simulation - Desktop Integrated */}
-            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]">
-                <div className="[perspective:1200px]">
-                    <div className="[transform:rotateX(10deg);] transition-transform duration-700 hover:[transform:rotateX(5deg);]">
-                        <div className="w-full max-w-5xl mx-auto glass-panel rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,112,243,0.1)] border-[#1a1a1a]">
-                            <div className="flex items-center h-10 px-4 bg-[#050505] border-b border-[#1a1a1a]">
-                                <div className="flex gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
-                                    <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] relative">
+                <PulseBeams
+                    beams={[
+                        {
+                            path: "M100 0V150C100 160 110 170 120 170H300",
+                            gradientConfig: {
+                                initial: { x1: "0%", x2: "0%", y1: "0%", y2: "10%" },
+                                animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
+                                transition: { duration: 3, repeat: Infinity, repeatDelay: 1 }
+                            }
+                        },
+                        {
+                            path: "M1100 0V150C1100 160 1090 170 1080 170H900",
+                            gradientConfig: {
+                                initial: { x1: "100%", x2: "100%", y1: "0%", y2: "10%" },
+                                animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
+                                transition: { duration: 3, repeat: Infinity, repeatDelay: 1.5 }
+                            }
+                        },
+                        {
+                            path: "M200 600V450C200 440 210 430 220 430H400",
+                            gradientConfig: {
+                                initial: { x1: "0%", x2: "0%", y1: "100%", y2: "90%" },
+                                animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
+                                transition: { duration: 3, repeat: Infinity, repeatDelay: 2 }
+                            }
+                        },
+                        {
+                            path: "M1000 600V450C1000 440 990 430 980 430H800",
+                            gradientConfig: {
+                                initial: { x1: "100%", x2: "100%", y1: "100%", y2: "90%" },
+                                animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
+                                transition: { duration: 3, repeat: Infinity, repeatDelay: 2.5 }
+                            }
+                        }
+                    ]}
+                    width={1200}
+                    height={600}
+                    className="py-20"
+                >
+                    <div className="[perspective:1200px] w-full relative z-20">
+                        <div className="[transform:rotateX(10deg);] transition-transform duration-700 hover:[transform:rotateX(5deg);]">
+                            <div className="w-full max-w-5xl mx-auto glass-panel rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,112,243,0.1)] border-[#1a1a1a]">
+                                <div className="flex items-center h-10 px-4 bg-[#050505] border-b border-[#1a1a1a]">
+                                    <div className="flex gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
+                                        <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
+                                        <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+                                    </div>
+                                    <div className="mx-auto text-xs text-[#555] font-mono">index.ts — Aether Edge</div>
                                 </div>
-                                <div className="mx-auto text-xs text-[#555] font-mono">index.ts — Aether Edge</div>
-                            </div>
-                            <div className="p-6 md:p-8 bg-[#0a0a0a]/50 backdrop-blur-md font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">1</span>
-                                    <span><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">2</span>
-                                    <span></span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">3</span>
-                                    <span><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">4</span>
-                                    <span>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">5</span>
-                                    <span>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">6</span>
-                                    <span>  &#125;</span>
-                                </div>
-                                <div className="flex">
-                                    <span className="text-gray-600 mr-4 select-none">7</span>
-                                    <span>&#125;);</span>
+                                <div className="p-6 md:p-8 bg-[#0a0a0a]/50 backdrop-blur-md font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">1</span>
+                                        <span><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">2</span>
+                                        <span></span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">3</span>
+                                        <span><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">4</span>
+                                        <span>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">5</span>
+                                        <span>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">6</span>
+                                        <span>  &#125;</span>
+                                    </div>
+                                    <div className="flex">
+                                        <span className="text-gray-600 mr-4 select-none">7</span>
+                                        <span>&#125;);</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </PulseBeams>
             </div>
 
         </section>

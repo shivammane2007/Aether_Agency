@@ -1,3 +1,5 @@
+import { ExpandableCard } from "@/components/ui/expandable-card";
+
 export default function ProductOverviewSection() {
     return (
         <section id="product" className="py-32 relative bg-black overflow-hidden">
@@ -5,7 +7,7 @@ export default function ProductOverviewSection() {
             <div className="absolute top-0 right-[-20%] w-[1000px] h-[1000px] bg-[radial-gradient(circle,rgba(0,112,243,0.05)_0%,transparent_60%)] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="max-w-3xl mb-24">
+                <div className="max-w-3xl mb-20">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-[#0070f3] uppercase tracking-widest mb-6">
                         The Problem
                     </div>
@@ -13,31 +15,60 @@ export default function ProductOverviewSection() {
                         Infrastructure that gets out of your way.
                     </h2>
                     <p className="text-xl text-[#888888] font-light leading-relaxed">
-                        The real bottleneck isn&apos;t your code. It&apos;s the fragile layers of complexity between your logic and your users.
+                        The real bottleneck isn&apos;t your code. It&apos;s the fragile layers of complexity between your logic and your users. Click to explore the architecture.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="glass-panel p-10 rounded-2xl relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl group-hover:bg-red-500/10 transition-colors duration-500" />
-                        <h3 className="text-2xl font-semibold text-white mb-4">Legacy Cloud</h3>
-                        <p className="text-[#888888] leading-relaxed">
-                            Current cloud solutions force you to stitch together fragile pipelines, manage endless JSON/YAML configurations, and guess at unpredictable scaling policies. You spend weeks building deployment infrastructure instead of product features.
-                        </p>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <ExpandableCard
+                        title="Legacy Cloud"
+                        description="Complexity by design"
+                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                    >
+                        <div className="space-y-4">
+                            <p>
+                                Traditional cloud providers force a heavy "Tax on Innovation." Every new feature requires:
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2">
+                                <li>Complex VPC and Subnet mapping</li>
+                                <li>Manual Container Orchestration (K8s complexity)</li>
+                                <li>Fragile CI/CD pipelines with 1000+ lines of YAML</li>
+                                <li>Variable Latency due to region-locking</li>
+                            </ul>
+                            <div className="p-4 rounded-xl bg-red-500/5 border border-red-500/10 mt-4 text-red-200/80 text-sm italic">
+                                Result: Developers spend 40% of their time on "Plumbing" rather than "Product."
+                            </div>
+                        </div>
+                    </ExpandableCard>
 
-                    <div className="glass-panel p-10 rounded-2xl relative overflow-hidden group border-[#0070f3]/30">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#0070f3]/10 rounded-full blur-3xl group-hover:bg-[#0070f3]/20 transition-colors duration-500" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#0070f3]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                        <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                            The Aether Primitive
-                            <span className="px-2 py-0.5 rounded bg-[#0070f3]/20 text-[#0070f3] text-xs font-bold uppercase tracking-wider">Solution</span>
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed relative z-10">
-                            Aether fundamentally changes this paradigm. We abstracted the entire DevOps layer into a single, highly intelligent primitive. There are no containers to orchestrate, no regions to select, and no scaling groups to manage. You simply write the code, and we distribute it globally in milliseconds—pure, unadulterated execution.
-                        </p>
-                    </div>
+                    <ExpandableCard
+                        title="The Aether Primitive"
+                        description="Execution at the edge"
+                        src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2070&auto=format&fit=crop"
+                        className="border-[#0070f3]/30"
+                    >
+                        <div className="space-y-4 text-gray-300">
+                            <p>
+                                Aether abstracts the entire compute layer. When you push code, the Aether Engine:
+                            </p>
+                            <div className="grid grid-cols-2 gap-4 my-6">
+                                <div className="p-4 rounded-xl bg-[#0070f3]/5 border border-[#0070f3]/20">
+                                    <div className="text-[#0070f3] font-bold mb-1 text-lg">Instant</div>
+                                    <div className="text-xs text-[#888888]">Global propagation in &lt;100ms</div>
+                                </div>
+                                <div className="p-4 rounded-xl bg-[#0070f3]/5 border border-[#0070f3]/20">
+                                    <div className="text-[#0070f3] font-bold mb-1 text-lg">Auto-Scale</div>
+                                    <div className="text-xs text-[#888888]">Zero-config vertical & horizontal scaling</div>
+                                </div>
+                            </div>
+                            <p>
+                                We don&apos;t use region selectors. Your code is everywhere, all at once. By removing the DevOps tax, Aether allows your team to focus exclusively on business logic while we handle the global distribution.
+                            </p>
+                            <div className="p-4 rounded-xl bg-green-500/5 border border-green-500/10 mt-4 text-green-200/80 text-sm">
+                                ⚡ Reduced infrastructure costs by average of 65% across YC partners.
+                            </div>
+                        </div>
+                    </ExpandableCard>
                 </div>
             </div>
         </section>
