@@ -27,7 +27,7 @@ export default function EcosystemSection() {
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                             A platform that scales with <br /> your <span className="text-gradient">ambition.</span>
                         </h2>
-                        <p className="text-[#888888] text-lg font-light leading-relaxed mb-8">
+                        <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">
                             Aether isn&apos;t just a hosting tool; it&apos;s the foundational layer of your entire digital ecosystem. Extend Aether infinitely with native integrations that click together securely in seconds.
                         </p>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8">

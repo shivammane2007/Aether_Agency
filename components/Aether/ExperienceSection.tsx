@@ -7,13 +7,13 @@ export default function ExperienceSection() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-[#888888] uppercase tracking-widest mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
                             Developer Experience
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                             Designed for deep <span className="italic text-[#0070f3]">flow state.</span>
                         </h2>
-                        <p className="text-xl text-[#888888] font-light leading-relaxed mb-10">
+                        <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
                             We obsessed over every millisecond of the developer experience, so you can obsess over your product. Aether feels like magic.
                         </p>
 
@@ -24,7 +24,7 @@ export default function ExperienceSection() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-medium mb-1">Instantaneous CLI</h4>
-                                    <p className="text-[#888888] text-sm leading-relaxed">Written in Rust, the CLI responds instantly. No waiting for Node/JVM to warm up.</p>
+                                    <p className="text-gray-400 text-sm leading-relaxed">Written in Rust, the CLI responds instantly. No waiting for Node/JVM to warm up.</p>
                                 </div>
                             </li>
                             <li className="flex gap-4">
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-medium mb-1">120fps Dashboard</h4>
-                                    <p className="text-[#888888] text-sm leading-relaxed">Blazingly fast web interface natively built with WebGL and WebAssembly.</p>
+                                    <p className="text-gray-400 text-sm leading-relaxed">Blazingly fast web interface natively built with WebGL and WebAssembly.</p>
                                 </div>
                             </li>
                             <li className="flex gap-4">
@@ -42,7 +42,7 @@ export default function ExperienceSection() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-medium mb-1">Aggressive Intuition</h4>
-                                    <p className="text-[#888888] text-sm leading-relaxed">No complex YAML files, hidden configuration menus, or obscure error logs. Intelligent automation provides rollbacks the second an error rate spikes.</p>
+                                    <p className="text-gray-400 text-sm leading-relaxed">No complex YAML files, hidden configuration menus, or obscure error logs. Intelligent automation provides rollbacks the second an error rate spikes.</p>
                                 </div>
                             </li>
                         </ul>
@@ -64,7 +64,7 @@ export default function ExperienceSection() {
 
                             <div className="space-y-4">
                                 <div className="h-24 rounded-lg bg-gradient-to-r from-[#111] to-[#0a0a0a] border border-[#1a1a1a] p-4 flex flex-col justify-between">
-                                    <span className="text-[10px] text-[#555] uppercase font-mono">Requests / sec</span>
+                                    <span className="text-[10px] text-gray-500 uppercase font-mono">Requests / sec</span>
                                     <div className="flex items-end gap-1 h-8">
                                         {[30, 45, 60, 40, 80, 100, 70, 90, 110, 85, 120, 100].map((h, i) => (
                                             <div key={i} className="flex-1 bg-[#0070f3] rounded-sm opacity-80 hover:opacity-100 transition-opacity" style={{ height: `${h}%` }} />
@@ -74,11 +74,11 @@ export default function ExperienceSection() {
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="h-16 rounded-lg bg-[#0a0a0a] border border-[#1a1a1a] p-3">
-                                        <span className="text-[10px] text-[#555] uppercase font-mono block mb-1">P99 Latency</span>
+                                        <span className="text-[10px] text-gray-500 uppercase font-mono block mb-1">P99 Latency</span>
                                         <span className="text-white font-semibold flex items-baseline gap-1">12<span className="text-xs text-[#888]">ms</span></span>
                                     </div>
                                     <div className="h-16 rounded-lg bg-[#0a0a0a] border border-[#1a1a1a] p-3">
-                                        <span className="text-[10px] text-[#555] uppercase font-mono block mb-1">Errors</span>
+                                        <span className="text-[10px] text-gray-500 uppercase font-mono block mb-1">Errors</span>
                                         <span className="text-white font-semibold flex items-baseline gap-1">0.00<span className="text-xs text-[#888]">%</span></span>
                                     </div>
                                 </div>

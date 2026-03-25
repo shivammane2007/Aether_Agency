@@ -60,7 +60,7 @@ export default function WorkflowSection() {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
                         From idea to global execution. <span className="text-white/50">In three seconds.</span>
                     </h2>
-                    <p className="text-xl text-[#888888] font-light">
+                    <p className="text-xl text-gray-400 font-light">
                         Forget provisioning. Focus on shipping.
                     </p>
                 </div>
@@ -93,7 +93,7 @@ export default function WorkflowSection() {
                                     <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
                                         {steps[selectedIndex].title}
                                     </h3>
-                                    <p className="text-[#888888] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4">
+                                    <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4">
                                         {steps[selectedIndex].desc}
                                     </p>
                                 </div>
