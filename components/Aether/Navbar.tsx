@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, memo } from "react";
 import { Play } from "lucide-react";
-import { loginUser } from "@/app/actions/auth";
+import { AuthSwitch } from "@/components/ui/auth-switch";
 
 export default memo(function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -37,14 +37,12 @@ export default memo(function Navbar() {
             </div>
 
             <div className="flex items-center gap-4">
-                <form action={loginUser} className="hidden sm:block">
-                    <button type="submit" className="text-sm font-medium text-[#888888] hover:text-white transition-colors px-4 py-2">Log In</button>
-                </form>
+                <AuthSwitch className="hidden sm:flex" />
                 <button
-                    className="flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full bg-white text-black hover:bg-gray-100 transition-colors"
+                    className="flex items-center gap-2 h-11 px-6 text-[10px] font-bold uppercase tracking-widest rounded-full bg-white text-black hover:bg-gray-100 transition-colors shadow-2xl shadow-white/5 active:scale-95 transition-transform"
                 >
                     Start Building
-                    <Play className="w-3 h-3 fill-black" />
+                    <Play className="w-3 h-3 fill-black transition-transform group-hover:translate-x-0.5" />
                 </button>
             </div>
         </nav>

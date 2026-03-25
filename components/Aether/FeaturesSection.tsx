@@ -1,4 +1,6 @@
 import { Globe2, Zap, Network, Route, GitCommitVertical } from "lucide-react";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { cn } from "@/lib/utils";
 
 const features = [
     {
@@ -55,9 +57,13 @@ export default function FeaturesSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, idx) => (
-                        <div
+                        <GlowingShadow
                             key={idx}
-                            className={`glass-panel p-8 rounded-2xl flex flex-col group hover:border-[#333333] transition-colors duration-300 ${idx === 3 || idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                            className={cn(
+                                "rounded-2xl overflow-hidden min-h-full",
+                                idx === 3 || idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
+                            )}
+                            contentClassName="p-8 h-full"
                         >
                             <div className="w-12 h-12 rounded-xl bg-[#0070f3]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {feature.icon}
@@ -77,7 +83,7 @@ export default function FeaturesSection() {
                                     <p className="text-[#888888] text-sm leading-snug italic">{feature.useCase}</p>
                                 </div>
                             </div>
-                        </div>
+                        </GlowingShadow>
                     ))}
                 </div>
             </div>

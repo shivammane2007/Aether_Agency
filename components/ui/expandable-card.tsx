@@ -3,6 +3,7 @@
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { GlowingShadow } from "./glowing-shadow";
 
 interface ExpandableCardProps {
   title: string;
@@ -149,56 +150,58 @@ export function ExpandableCard({
         )}
       </AnimatePresence>
 
-      <motion.div
-        layoutId={`card-${title}-${id}`}
-        onClick={() => setActive(true)}
-        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-        className={cn(
-          "p-4 flex flex-col justify-between items-center bg-[#0a0a0a] hover:bg-[#111] shadow-xl rounded-2xl cursor-pointer border border-[#1a1a1a] transition-colors duration-300 group",
-          className,
-        )}
+      <GlowingShadow
+        className={cn("rounded-2xl transition-all duration-300", className)}
+        contentClassName="p-4"
       >
-        <div className="flex gap-4 flex-col w-full">
-          <motion.div layoutId={`image-${title}-${id}`} className="overflow-hidden rounded-xl h-56 w-full">
-            <img
-              src={src}
-              alt={title}
-              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
-          <div className="flex justify-between items-center">
-            <div className="flex flex-col">
-              <motion.p
-                layoutId={`description-${description}-${id}`}
-                className="text-[#888888] md:text-left text-sm font-medium"
-              >
-                {description}
-              </motion.p>
-              <motion.h3
-                layoutId={`title-${title}-${id}`}
-                className="text-white md:text-left font-bold"
-              >
-                {title}
-              </motion.h3>
-            </div>
-            <div className="h-10 w-10 shrink-0 flex items-center justify-center rounded-full bg-[#0a0a0a] text-white/70 border border-[#1a1a1a] group-hover:border-[#0070f3] group-hover:text-white transition-colors duration-300">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 5v14M5 12h14" />
-              </svg>
+        <motion.div
+          layoutId={`card-${title}-${id}`}
+          onClick={() => setActive(true)}
+          transition={{ type: "spring", damping: 25, stiffness: 200 }}
+          className="flex flex-col justify-between items-center bg-transparent cursor-pointer group"
+        >
+          <div className="flex gap-4 flex-col w-full">
+            <motion.div layoutId={`image-${title}-${id}`} className="overflow-hidden rounded-xl h-56 w-full">
+              <img
+                src={src}
+                alt={title}
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <div className="flex justify-between items-center">
+              <div className="flex flex-col">
+                <motion.p
+                  layoutId={`description-${description}-${id}`}
+                  className="text-[#888888] md:text-left text-sm font-medium"
+                >
+                  {description}
+                </motion.p>
+                <motion.h3
+                  layoutId={`title-${title}-${id}`}
+                  className="text-white md:text-left font-bold"
+                >
+                  {title}
+                </motion.h3>
+              </div>
+              <div className="h-10 w-10 shrink-0 flex items-center justify-center rounded-full bg-[#0a0a0a] text-white/70 border border-[#1a1a1a] group-hover:border-[#0070f3] group-hover:text-white transition-colors duration-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </GlowingShadow>
     </>
   );
 }

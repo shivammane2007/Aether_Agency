@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { cn } from "@/lib/utils";
 
 const INTEGRATIONS = ['Snowflake', 'Datadog', 'Stripe', 'Supabase'];
 
@@ -11,12 +13,12 @@ export default function EcosystemSection() {
                     <div className="order-2 lg:order-1 relative">
                         <div className="grid grid-cols-2 gap-4">
                             {INTEGRATIONS.map((integration, idx) => (
-                                <div key={idx} className="glass-panel p-6 rounded-xl border border-[#222] flex flex-col items-center justify-center hover:border-[#0070f3]/50 hover:bg-[#0070f3]/5 transition-all duration-300">
+                                <GlowingShadow key={idx} className="rounded-xl overflow-hidden" contentClassName="p-6 flex flex-col items-center justify-center h-full">
                                     <div className="w-12 h-12 rounded bg-black flex items-center justify-center border border-[#1a1a1a] mb-3">
                                         <span className="text-white font-bold text-lg">{integration[0]}</span>
                                     </div>
                                     <span className="text-white font-medium text-sm">{integration}</span>
-                                </div>
+                                </GlowingShadow>
                             ))}
                         </div>
                     </div>

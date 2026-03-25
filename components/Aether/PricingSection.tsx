@@ -1,4 +1,6 @@
 import { Check } from "lucide-react";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { cn } from "@/lib/utils";
 
 export default function PricingSection() {
     return (
@@ -17,7 +19,7 @@ export default function PricingSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                     {/* Starter Plan */}
-                    <div className="glass-panel p-8 rounded-2xl flex flex-col hover:border-[#333333] transition-colors relative">
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 h-full">
                         <div className="mb-8">
                             <h3 className="text-xl font-semibold text-white mb-2">Starter</h3>
                             <div className="flex items-baseline gap-1 mb-4">
@@ -39,11 +41,14 @@ export default function PricingSection() {
                         <button className="w-full py-3 rounded-xl bg-transparent border border-[#333333] text-white font-medium hover:bg-[#111111] transition-colors">
                             Get Started
                         </button>
-                    </div>
+                    </GlowingShadow>
 
                     {/* Pro Plan (Highlighted) */}
-                    <div className="glass-panel p-8 rounded-2xl flex flex-col border-[#0070f3]/50 shadow-[0_0_30px_rgba(0,112,243,0.1)] relative scale-100 md:scale-105 z-10 bg-[#050505]">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <GlowingShadow 
+                        className="rounded-2xl scale-100 md:scale-105 z-10 border-[#0070f3]/50" 
+                        contentClassName="p-8 h-full bg-[#050505]"
+                    >
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
                             <div className="px-3 py-1 bg-[#0070f3] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg">
                                 Most Popular
                             </div>
@@ -70,10 +75,10 @@ export default function PricingSection() {
                         <button className="w-full py-3 rounded-xl bg-[#0070f3] text-white font-medium hover:bg-[#005bb5] hover:shadow-[0_0_20px_rgba(0,112,243,0.4)] transition-all">
                             Start Pro
                         </button>
-                    </div>
+                    </GlowingShadow>
 
                     {/* Enterprise Plan */}
-                    <div className="glass-panel p-8 rounded-2xl flex flex-col hover:border-[#333333] transition-colors relative">
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 h-full text-left">
                         <div className="mb-8">
                             <h3 className="text-xl font-semibold text-white mb-2">Enterprise</h3>
                             <div className="flex items-baseline gap-1 mb-4">
@@ -94,7 +99,7 @@ export default function PricingSection() {
                         <button className="w-full py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition-colors">
                             Contact Sales
                         </button>
-                    </div>
+                    </GlowingShadow>
 
                 </div>
             </div>

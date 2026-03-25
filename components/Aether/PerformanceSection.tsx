@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { cn } from "@/lib/utils";
 
 export default function PerformanceSection() {
     return (
@@ -15,22 +17,22 @@ export default function PerformanceSection() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
-                    <div className="glass-panel p-8 text-center rounded-2xl flex flex-col justify-center border-t border-t-[#333] hover:border-[#555] transition-colors">
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">&lt; 2<span className="text-2xl text-[#555]">ms</span></span>
                         <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Cold Starts Globally</span>
-                    </div>
-                    <div className="glass-panel p-8 text-center rounded-2xl flex flex-col justify-center border-t border-t-[#333] hover:border-[#555] transition-colors">
+                    </GlowingShadow>
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">99.999%</span>
                         <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Enterprise SLA</span>
-                    </div>
-                    <div className="glass-panel p-8 text-center rounded-2xl flex flex-col justify-center border-t border-t-[#333] hover:border-[#555] transition-colors">
+                    </GlowingShadow>
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">&lt; 50<span className="text-2xl text-[#555]">ms</span></span>
                         <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Global P99 Latency</span>
-                    </div>
-                    <div className="glass-panel p-8 text-center rounded-2xl flex flex-col justify-center border-t border-t-[#333] hover:border-[#555] transition-colors">
+                    </GlowingShadow>
+                    <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">Layer 7</span>
                         <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">DDoS Mitigation</span>
-                    </div>
+                    </GlowingShadow>
                 </div>
 
                 {/* CTA Section */}
