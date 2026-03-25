@@ -23,7 +23,7 @@ export default memo(function HeroSection() {
 
             <div className="relative mx-auto max-w-5xl text-center z-10">
                 {/* Core Tagline */}
-                <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a]/80 text-xs font-medium text-[#888888] backdrop-blur-sm animate-fade-in">
+                <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a]/80 text-xs font-medium text-gray-400 backdrop-blur-sm animate-fade-in">
                     <span className="w-2 h-2 rounded-full bg-[#0070f3] animate-pulse" />
                     YC &apos;26 • Backed by Sequoia • 99.999% SLA Guaranteed
                 </div>
@@ -33,7 +33,7 @@ export default memo(function HeroSection() {
                     for <span className="text-gradient">infinite scale.</span>
                 </h1>
 
-                <p className="mx-auto my-8 max-w-2xl text-lg md:text-xl text-[#888888] font-light leading-relaxed">
+                <p className="mx-auto my-8 max-w-2xl text-lg md:text-xl text-gray-400 font-light leading-relaxed">
                     Build, deploy, and scale globally without managing infrastructure.
                     Aether is the distributed edge compute engine designed for the next generation of the internet.
                 </p>
@@ -107,7 +107,7 @@ export default memo(function HeroSection() {
                                         <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
                                         <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
                                     </div>
-                                    <div className="mx-auto text-xs text-[#555] font-mono">index.ts — Aether Edge</div>
+                                    <div className="mx-auto text-xs text-gray-500 font-mono">index.ts — Aether Edge</div>
                                 </div>
                                 <div className="p-6 md:p-8 bg-[#0a0a0a]/50 backdrop-blur-md font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
                                     <div className="flex">

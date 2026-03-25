@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
                         Core Primitives for the <span className="text-gradient">Modern Web</span>
                     </h2>
-                    <p className="text-lg text-[#888888] font-light">
+                    <p className="text-lg text-gray-400 font-light">
                         Everything you need to build at planetary scale, built directly into the platform fabric.
                         No plugins, no configuration drift, just pure capability.
                     </p>
@@ -69,18 +69,18 @@ export default function FeaturesSection() {
                                 {feature.icon}
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                            <p className="text-[#888888] mb-6 text-sm leading-relaxed flex-grow">
+                            <p className="text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
                                 {feature.description}
                             </p>
 
                             <div className="space-y-4 pt-6 border-t border-[#1a1a1a]">
                                 <div>
-                                    <h4 className="text-xs uppercase tracking-wider text-[#555555] font-semibold mb-1">The Benefit</h4>
+                                    <h4 className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-1">The Benefit</h4>
                                     <p className="text-gray-300 text-sm leading-snug">{feature.benefit}</p>
                                 </div>
                                 <div>
                                     <h4 className="text-xs uppercase tracking-wider text-[#0070f3] font-semibold mb-1">Use Case</h4>
-                                    <p className="text-[#888888] text-sm leading-snug italic">{feature.useCase}</p>
+                                    <p className="text-gray-400 text-sm leading-snug italic">{feature.useCase}</p>
                                 </div>
                             </div>
                         </GlowingShadow>

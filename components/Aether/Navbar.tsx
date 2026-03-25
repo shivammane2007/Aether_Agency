@@ -29,7 +29,7 @@ export default memo(function Navbar() {
                 </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#888888]">
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
                 <a href="#product" className="hover:text-white transition-colors">Product</a>
                 <a href="#features" className="hover:text-white transition-colors">Features</a>
                 <a href="#ecosystem" className="hover:text-white transition-colors">Ecosystem</a>

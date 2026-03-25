@@ -11,27 +11,27 @@ export default function PerformanceSection() {
                     <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6">
                         Enterprise-grade performance <span className="text-gradient">by default.</span>
                     </h2>
-                    <p className="text-xl text-[#888888] font-light">
+                    <p className="text-xl text-gray-400 font-light">
                         Metrics that completely redefine the way you architect software. Aether provides the definitive reliability and raw power demanded by the world&apos;s most critical web applications.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
                     <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
-                        <span className="text-5xl font-black text-white mb-2">&lt; 2<span className="text-2xl text-[#555]">ms</span></span>
-                        <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Cold Starts Globally</span>
+                        <span className="text-5xl font-black text-white mb-2">&lt; 2<span className="text-2xl text-gray-500">ms</span></span>
+                        <span className="text-gray-400 text-sm uppercase tracking-widest font-semibold">Cold Starts Globally</span>
                     </GlowingShadow>
                     <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">99.999%</span>
-                        <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Enterprise SLA</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-widest font-semibold">Enterprise SLA</span>
                     </GlowingShadow>
                     <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
-                        <span className="text-5xl font-black text-white mb-2">&lt; 50<span className="text-2xl text-[#555]">ms</span></span>
-                        <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">Global P99 Latency</span>
+                        <span className="text-5xl font-black text-white mb-2">&lt; 50<span className="text-2xl text-gray-500">ms</span></span>
+                        <span className="text-gray-400 text-sm uppercase tracking-widest font-semibold">Global P99 Latency</span>
                     </GlowingShadow>
                     <GlowingShadow className="rounded-2xl" contentClassName="p-8 text-center justify-center min-h-[160px]">
                         <span className="text-5xl font-black text-white mb-2">Layer 7</span>
-                        <span className="text-[#888888] text-sm uppercase tracking-widest font-semibold">DDoS Mitigation</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-widest font-semibold">DDoS Mitigation</span>
                     </GlowingShadow>
                 </div>
 
@@ -42,7 +42,7 @@ export default function PerformanceSection() {
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10">
                         Start creating without limits.
                     </h2>
-                    <p className="text-lg text-[#888888] max-w-2xl mx-auto mb-12 relative z-10">
+                    <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-12 relative z-10">
                         Join the next generation of visionary engineering teams redefining what&apos;s possible on the web. Build the future faster. Get started completely free, no credit card required.
                     </p>
 

@@ -14,7 +14,7 @@ export default function ProductOverviewSection() {
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
                         Infrastructure that gets out of your way.
                     </h2>
-                    <p className="text-xl text-[#888888] font-light leading-relaxed">
+                    <p className="text-xl text-gray-400 font-light leading-relaxed">
                         The real bottleneck isn&apos;t your code. It&apos;s the fragile layers of complexity between your logic and your users. Click to explore the architecture.
                     </p>
                 </div>
@@ -24,6 +24,7 @@ export default function ProductOverviewSection() {
                         title="Legacy Cloud"
                         description="Complexity by design"
                         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                        disableGlow
                     >
                         <div className="space-y-4">
                             <p>
@@ -44,8 +45,8 @@ export default function ProductOverviewSection() {
                     <ExpandableCard
                         title="The Aether Primitive"
                         description="Execution at the edge"
-                        src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2070&auto=format&fit=crop"
-                        className="border-[#0070f3]/30"
+                        src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=2074&auto=format&fit=crop"
+                        disableGlow
                     >
                         <div className="space-y-4 text-gray-300">
                             <p>
@@ -54,11 +55,11 @@ export default function ProductOverviewSection() {
                             <div className="grid grid-cols-2 gap-4 my-6">
                                 <div className="p-4 rounded-xl bg-[#0070f3]/5 border border-[#0070f3]/20">
                                     <div className="text-[#0070f3] font-bold mb-1 text-lg">Instant</div>
-                                    <div className="text-xs text-[#888888]">Global propagation in &lt;100ms</div>
+                                    <div className="text-xs text-gray-400">Global propagation in &lt;100ms</div>
                                 </div>
                                 <div className="p-4 rounded-xl bg-[#0070f3]/5 border border-[#0070f3]/20">
                                     <div className="text-[#0070f3] font-bold mb-1 text-lg">Auto-Scale</div>
-                                    <div className="text-xs text-[#888888]">Zero-config vertical & horizontal scaling</div>
+                                    <div className="text-xs text-gray-400">Zero-config vertical & horizontal scaling</div>
                                 </div>
                             </div>
                             <p>
