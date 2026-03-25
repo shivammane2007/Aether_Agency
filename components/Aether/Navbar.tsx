@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, memo } from "react";
 import { Play } from "lucide-react";
-import { logoutUser } from "@/app/actions/auth";
+import { loginUser } from "@/app/actions/auth";
 
 export default memo(function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -37,7 +37,7 @@ export default memo(function Navbar() {
             </div>
 
             <div className="flex items-center gap-4">
-                <form action={logoutUser} className="hidden sm:block">
+                <form action={loginUser} className="hidden sm:block">
                     <button type="submit" className="text-sm font-medium text-[#888888] hover:text-white transition-colors">Log In</button>
                 </form>
                 <button

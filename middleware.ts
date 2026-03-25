@@ -1,26 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// We want to force authentication on the root path '/' before users see the landing page.
+// Allow all users to access the landing page by default
 export function middleware(request: NextRequest) {
-    const authToken = request.cookies.get("auth_token");
-
-    // If the user does not have a session cookie and is trying to access the root UI
-    if (!authToken && request.nextUrl.pathname === "/") {
-        console.log("Unauthorized access to root, redirecting to /auth");
-        return NextResponse.redirect(new URL("/auth", request.url));
-    }
-
-    // If the user is authenticated and explicitly goes to the auth portal again
-    if (authToken && request.nextUrl.pathname === "/auth") {
-        return NextResponse.redirect(new URL("/", request.url));
-    }
-
     return NextResponse.next();
 }
 
-// Ensure the middleware only scales for specific UI routes 
-// and ignores API routes, static Next.js assets, public images, etc.
+// Ignore static assets and API routes
 export const config = {
-    matcher: ["/", "/auth"],
+    matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

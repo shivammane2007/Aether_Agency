@@ -24,6 +24,6 @@ export async function logoutUser() {
     const cookieStore = await cookies();
     cookieStore.delete("auth_token");
 
-    // Redirect to the auth gate
-    redirect("/auth");
+    // Redirect to home page
+    redirect("/");
 }

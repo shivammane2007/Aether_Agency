@@ -9,12 +9,9 @@ import EcosystemSection from "@/components/Aether/EcosystemSection";
 import WorkflowSection from "@/components/Aether/WorkflowSection";
 import PricingSection from "@/components/Aether/PricingSection";
 import PerformanceSection from "@/components/Aether/PerformanceSection";
-import { WelcomeToast } from "@/components/WelcomeToast";
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-black selection:bg-[#0070f3]/30">
-      <WelcomeToast />
       <Navbar />
       <HeroSection />
       <SocialProofSection />

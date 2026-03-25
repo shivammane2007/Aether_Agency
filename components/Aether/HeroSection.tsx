@@ -1,110 +1,103 @@
 "use client";
+import * as React from "react";
 import { memo } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from 'next/link';
 import { ArrowRight } from "lucide-react";
 
 export default memo(function HeroSection() {
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+        <section className="relative overflow-hidden bg-black pt-32 pb-20 px-6">
             {/* Premium subtle glow background */}
             <div className="hero-glow" />
 
-            {/* Core Tagline */}
-            <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a]/50 text-xs font-medium text-[#888888] backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-[#0070f3] animate-pulse" />
-                YC &apos;26 • Backed by Sequoia • 99.999% SLA Guaranteed
+            {/* Background pattern elements from hero-section-9 */}
+            <div
+                aria-hidden
+                className="z-[0] absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block">
+                <div className="w-[35rem] h-[80rem] -translate-y-1/2 absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(210,100%,50%,.08)_0,hsla(210,100%,30%,.02)_50%,transparent_80%)]" />
+                <div className="h-[80rem] absolute left-1/4 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(210,100%,50%,.06)_0,hsla(210,100%,30%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
             </div>
 
-            <div className="relative mx-auto max-w-5xl px-6 py-12 lg:py-16 z-10">
-                <div className="relative z-10 mx-auto max-w-3xl text-center">
-                    <h1 className="text-balance text-6xl md:text-8xl font-black tracking-tighter leading-[0.95] text-white">
-                        Modern Software <br className="hidden md:block" />
-                        testing <span className="text-gradient">reimagined.</span>
-                    </h1>
-                    <p className="mx-auto my-8 max-w-2xl text-xl md:text-2xl text-[#888888] font-light leading-relaxed">
-                        Officiis laudantium excepturi ducimus rerum dignissimos, and tempora nam vitae, excepturi ducimus iste provident dolores.
-                    </p>
+            <div className="relative mx-auto max-w-5xl text-center z-10">
+                {/* Core Tagline */}
+                <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a]/80 text-xs font-medium text-[#888888] backdrop-blur-sm animate-fade-in">
+                    <span className="w-2 h-2 rounded-full bg-[#0070f3] animate-pulse" />
+                    YC &apos;26 • Backed by Sequoia • 99.999% SLA Guaranteed
+                </div>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="w-full sm:w-auto rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-6 text-lg font-semibold"
-                        >
-                            <Link href="#">
-                                <span className="btn-label">Start Building</span>
-                            </Link>
-                        </Button>
-                        <Button
-                            asChild
-                            variant="outline"
-                            size="lg"
-                            className="w-full sm:w-auto rounded-full border-[#333] text-white hover:bg-[#111] px-8 py-6 text-lg font-medium"
-                        >
-                            <Link href="#">
-                                <span>Contact Sales</span>
-                            </Link>
-                        </Button>
+                <h1 className="text-balance text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95] text-white mb-8">
+                    The new standard <br className="hidden md:block" />
+                    for <span className="text-gradient">infinite scale.</span>
+                </h1>
+
+                <p className="mx-auto my-8 max-w-2xl text-lg md:text-xl text-[#888888] font-light leading-relaxed">
+                    Build, deploy, and scale globally without managing infrastructure.
+                    Aether is the distributed edge compute engine designed for the next generation of the internet.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Link
+                        href="#"
+                        className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white text-black hover:bg-white/90 text-lg font-medium transition-all duration-300">
+                        Start building for free <ArrowRight className="ml-2 w-5 h-5" />
+                    </Link>
+                    <Link
+                        href="#"
+                        className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full border border-[#333] text-white hover:bg-white/5 text-lg font-medium transition-colors">
+                        Contact Enterprise Sales
+                    </Link>
+                </div>
+            </div>
+
+            {/* Code window preview simulation - Desktop Integrated */}
+            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]">
+                <div className="[perspective:1200px]">
+                    <div className="[transform:rotateX(10deg);] transition-transform duration-700 hover:[transform:rotateX(5deg);]">
+                        <div className="w-full max-w-5xl mx-auto glass-panel rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,112,243,0.1)] border-[#1a1a1a]">
+                            <div className="flex items-center h-10 px-4 bg-[#050505] border-b border-[#1a1a1a]">
+                                <div className="flex gap-2">
+                                    <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
+                                    <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
+                                    <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+                                </div>
+                                <div className="mx-auto text-xs text-[#555] font-mono">index.ts — Aether Edge</div>
+                            </div>
+                            <div className="p-6 md:p-8 bg-[#0a0a0a]/50 backdrop-blur-md font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">1</span>
+                                    <span><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">2</span>
+                                    <span></span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">3</span>
+                                    <span><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">4</span>
+                                    <span>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">5</span>
+                                    <span>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">6</span>
+                                    <span>  &#125;</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="text-gray-600 mr-4 select-none">7</span>
+                                    <span>&#125;);</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Code window preview simulation */}
-            <div className="w-full max-w-5xl mx-auto mt-24 glass-panel rounded-xl overflow-hidden shadow-2xl skew-y-0 md:-skew-y-2 transform-gpu">
-                <div className="flex items-center h-10 px-4 bg-[#050505] border-b border-[#1a1a1a]">
-                    <div className="flex gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
-                    </div>
-                    <div className="mx-auto text-xs text-[#555] font-mono">index.ts — Aether Edge</div>
-                </div>
-                <div className="p-6 md:p-8 bg-[#0a0a0a] font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">1</span>
-                        <span><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">2</span>
-                        <span></span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">3</span>
-                        <span><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">4</span>
-                        <span>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">5</span>
-                        <span>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">6</span>
-                        <span>  &#125;</span>
-                    </div>
-                    <div className="flex">
-                        <span className="text-gray-600 mr-4 select-none">7</span>
-                        <span>&#125;);</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* Partners Section */}
-            <div className="relative z-10 mt-32 w-full max-w-5xl mx-auto px-6 pb-20">
-                <h2 className="text-center text-lg font-medium text-[#555]">Your favorite companies are our partners.</h2>
-                <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 sm:gap-y-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img className="h-5 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia" />
-                    <img className="h-4 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/column.svg" alt="Column" />
-                    <img className="h-4 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/github.svg" alt="GitHub" />
-                    <img className="h-5 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/nike.svg" alt="Nike" />
-                    <img className="h-4 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/laravel.svg" alt="Laravel" />
-                    <img className="h-6 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/openai.svg" alt="OpenAI" />
-                    <img className="h-5 w-auto brightness-200" src="https://html.tailus.io/blocks/customers/vercel.svg" alt="Vercel" />
-                </div>
-            </div>
         </section>
     );
 });
