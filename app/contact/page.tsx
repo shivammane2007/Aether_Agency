@@ -1,5 +1,6 @@
 import Navbar from "@/components/Aether/Navbar";
 import { ContactSection } from "@/components/Aether/ContactSection";
+import GlobeSection from "@/components/Aether/GlobeSection";
 
 export default function ContactPage() {
     return (
@@ -8,7 +9,7 @@ export default function ContactPage() {
             <div className="pt-20">
                 <ContactSection />
             </div>
-            {/* You could add a footer here if available */}
+            <GlobeSection />
         </main>
     );
 }
