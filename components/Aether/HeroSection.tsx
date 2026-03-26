@@ -58,7 +58,7 @@ export default memo(function HeroSection() {
             </div>
 
             {/* Code window preview simulation - Desktop Integrated */}
-            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] relative">
+            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] relative">
                 <PulseBeams
                     beams={[
                         {
