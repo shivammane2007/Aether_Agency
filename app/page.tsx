@@ -8,6 +8,7 @@ import TechnologySection from "@/components/Aether/TechnologySection";
 import EcosystemSection from "@/components/Aether/EcosystemSection";
 import WorkflowSection from "@/components/Aether/WorkflowSection";
 import PricingSection from "@/components/Aether/PricingSection";
+import TestimonialSection from "@/components/Aether/TestimonialSection";
 import PerformanceSection from "@/components/Aether/PerformanceSection";
 import { Footer } from "@/components/Aether/Footer";
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <EcosystemSection />
       <WorkflowSection />
       <PricingSection />
+      <TestimonialSection />
       <PerformanceSection />
       <div className="bg-black pt-20">
         <Footer />
