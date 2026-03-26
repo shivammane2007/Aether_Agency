@@ -11,10 +11,15 @@ import {
     ShieldCheck, 
     ArrowUpRight,
     Headset,
-    MapPin
+    MapPin,
+    Twitter,
+    Facebook,
+    Linkedin,
+    Link as LinkIcon
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlowingButton } from "@/components/ui/glowing-button";
+import { ShareButton } from "@/components/ui/share-button";
 
 export function ContactSection() {
     const [focused, setFocused] = useState<string | null>(null);
@@ -59,6 +64,29 @@ export function ContactSection() {
         { label: "Uptime", value: "99.999%", color: "text-green-500" },
         { label: "Global Nodes", value: "250+", color: "text-blue-500" },
         { label: "Avg. Latency", value: "<15ms", color: "text-cyan-500" }
+    ];
+
+    const shareLinks = [
+        {
+            icon: Twitter,
+            onClick: () => window.open(`https://twitter.com/share?url=${window.location.href}`, "_blank"),
+            label: "Share on Twitter",
+        },
+        {
+            icon: Facebook,
+            onClick: () => window.open(`https://facebook.com/share?url=${window.location.href}`, "_blank"),
+            label: "Share on Facebook",
+        },
+        {
+            icon: Linkedin,
+            onClick: () => window.open(`https://linkedin.com/share?url=${window.location.href}`, "_blank"),
+            label: "Share on LinkedIn",
+        },
+        {
+            icon: LinkIcon,
+            onClick: () => navigator.clipboard.writeText(window.location.href),
+            label: "Copy link",
+        },
     ];
 
     return (
@@ -235,6 +263,15 @@ export function ContactSection() {
                                     Launch Inquiry <Send className="ml-2 w-4 h-4" />
                                 </GlowingButton>
                             </form>
+
+                            {/* Share Options */}
+                            <div className="mt-8 pt-8 border-t border-[#1a1a1a] flex flex-col items-center justify-center gap-4">
+                                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Share this page</span>
+                                <ShareButton links={shareLinks} className="text-gray-400 hover:text-white">
+                                    <LinkIcon size={15} />
+                                    Share
+                                </ShareButton>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
