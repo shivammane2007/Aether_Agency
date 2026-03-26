@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, Play, X } from "lucide-react";
 import { AuthSwitch } from "@/components/ui/auth-switch";
 import { LimelightNav } from "@/components/ui/limelight-nav";
+import { LogoMark } from "@/components/Aether/LogoMark";
 
 export default memo(function Navbar() {
     const pathname = usePathname();
@@ -85,11 +86,7 @@ export default memo(function Navbar() {
                 } ${scrolled ? "bg-black/40 backdrop-blur-xl border-b border-[#1a1a1a]" : "bg-transparent"}`}
             >
                 <a href="/" className="flex min-w-0 items-center gap-2 cursor-pointer group">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0070f3] to-[#3291ff] flex items-center justify-center shadow-[0_0_15px_rgba(0,112,243,0.5)] group-hover:shadow-[0_0_25px_rgba(0,112,243,0.8)] transition-all duration-300 shrink-0">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 22H22L12 2Z" fill="white" />
-                        </svg>
-                    </div>
+                    <LogoMark className="w-9 h-9 shrink-0 transition-all duration-300 group-hover:scale-105" />
                     <div className="font-semibold text-lg sm:text-xl tracking-tight text-white ml-1 sm:ml-2 transition-colors duration-300 truncate">
                         Aether
                     </div>

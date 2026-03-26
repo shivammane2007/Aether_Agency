@@ -1,0 +1,46 @@
+interface LogoMarkProps {
+    className?: string;
+}
+
+export function LogoMark({ className }: LogoMarkProps) {
+    return (
+        <svg
+            viewBox="0 0 120 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            aria-hidden="true"
+        >
+            <path
+                d="M59.5 10C55.9 10 52.68 11.88 50.84 14.96L20.88 65.14C19.8 66.94 19.23 69 19.23 71.1C19.23 77.48 24.39 82.65 30.77 82.65H42.18C45.93 82.65 49.39 80.62 51.21 77.35L60.01 61.62L68.8 77.35C70.63 80.62 74.08 82.65 77.84 82.65H89.23C95.61 82.65 100.77 77.48 100.77 71.1C100.77 69 100.2 66.94 99.12 65.14L69.16 14.96C67.32 11.88 64.1 10 60.5 10H59.5Z"
+                fill="#1F4362"
+            />
+            <path
+                d="M37.5 53L59.8 66L82.5 53"
+                stroke="white"
+                strokeWidth="4.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M31.5 76L37.5 53L59.8 66L31.5 76Z"
+                stroke="white"
+                strokeWidth="4.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M59.8 66L82.5 53L88.5 76"
+                stroke="white"
+                strokeWidth="4.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <circle cx="37.5" cy="53" r="6.7" fill="#1F4362" stroke="white" strokeWidth="3.8" />
+            <circle cx="59.8" cy="66" r="6.7" fill="#1F4362" stroke="white" strokeWidth="3.8" />
+            <circle cx="82.5" cy="53" r="6.7" fill="#1F4362" stroke="white" strokeWidth="3.8" />
+            <circle cx="31.5" cy="76" r="6.7" fill="#1F4362" stroke="white" strokeWidth="3.8" />
+            <circle cx="88.5" cy="76" r="6.7" fill="#1F4362" stroke="white" strokeWidth="3.8" />
+        </svg>
+    );
+}

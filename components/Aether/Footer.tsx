@@ -10,6 +10,7 @@ import {
   LinkedinIcon,
   YoutubeIcon,
 } from "lucide-react";
+import { LogoMark } from "@/components/Aether/LogoMark";
 
 interface FooterLink {
   title: string;
@@ -70,9 +71,7 @@ export function Footer() {
       <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8 relative z-10">
         <AnimatedContainer className="space-y-4">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-lg bg-[#0070f3] flex items-center justify-center">
-              <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-white" />
-            </div>
+            <LogoMark className="w-9 h-9 shrink-0" />
             <span className="text-xl font-bold tracking-tight text-white">
               Aether
             </span>
