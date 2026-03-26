@@ -5,8 +5,6 @@ import { cn } from "@/lib/utils";
 import Link from 'next/link';
 import { ArrowRight } from "lucide-react";
 import { GlowingButton } from "@/components/ui/glowing-button";
-import { PulseBeams } from "@/components/ui/pulse-beams";
-
 export default memo(function HeroSection() {
     return (
         <section className="relative overflow-hidden bg-black pt-32 pb-20 px-6">
@@ -59,45 +57,6 @@ export default memo(function HeroSection() {
 
             {/* Code window preview simulation - Desktop Integrated */}
             <div className="mx-auto mt-20 mb-32 max-w-7xl [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] relative">
-                <PulseBeams
-                    beams={[
-                        {
-                            path: "M100 0V150C100 160 110 170 120 170H300",
-                            gradientConfig: {
-                                initial: { x1: "0%", x2: "0%", y1: "0%", y2: "10%" },
-                                animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
-                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 0, ease: "linear" }
-                            }
-                        },
-                        {
-                            path: "M1100 0V150C1100 160 1090 170 1080 170H900",
-                            gradientConfig: {
-                                initial: { x1: "100%", x2: "100%", y1: "0%", y2: "10%" },
-                                animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
-                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 1, ease: "linear" }
-                            }
-                        },
-                        {
-                            path: "M200 600V450C200 440 210 430 220 430H400",
-                            gradientConfig: {
-                                initial: { x1: "0%", x2: "0%", y1: "100%", y2: "90%" },
-                                animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
-                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 2, ease: "linear" }
-                            }
-                        },
-                        {
-                            path: "M1000 600V450C1000 440 990 430 980 430H800",
-                            gradientConfig: {
-                                initial: { x1: "100%", x2: "100%", y1: "100%", y2: "90%" },
-                                animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
-                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 3, ease: "linear" }
-                            }
-                        }
-                    ]}
-                    width={1200}
-                    height={600}
-                    className="py-12"
-                >
                     <div className="w-full relative z-20 flex justify-center py-6">
                         <div className="w-full max-w-5xl mx-auto">
                             <div className="relative group">
@@ -143,7 +102,6 @@ export default memo(function HeroSection() {
                             </div>
                         </div>
                     </div>
-                </PulseBeams>
             </div>
 
         </section>
