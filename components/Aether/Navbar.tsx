@@ -60,11 +60,14 @@ export default memo(function Navbar() {
         { id: "features", label: "Features", href: "/#features" },
         { id: "ecosystem", label: "Ecosystem", href: "/#ecosystem" },
         { id: "pricing", label: "Pricing", href: "/#pricing" },
+        { id: "faq", label: "FAQ", href: "/faq" },
         { id: "contact", label: "Contact", href: "/contact" },
     ];
 
     let currentActiveIndex = 0;
     if (pathname === '/contact') {
+        currentActiveIndex = 5;
+    } else if (pathname === '/faq') {
         currentActiveIndex = 4;
     } else {
         const index = navItems.findIndex(item => item.id === activeSection);

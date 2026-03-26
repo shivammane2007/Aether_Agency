@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import FaqSection from "@/components/Aether/FaqSection";
 import { cn } from "@/lib/utils";
 
 export default function PerformanceSection() {
@@ -33,6 +34,10 @@ export default function PerformanceSection() {
                         <span className="text-5xl font-black text-white mb-2">Layer 7</span>
                         <span className="text-gray-400 text-sm uppercase tracking-widest font-semibold">DDoS Mitigation</span>
                     </GlowingShadow>
+                </div>
+
+                <div className="mb-32">
+                    <FaqSection />
                 </div>
 
                 {/* CTA Section */}
