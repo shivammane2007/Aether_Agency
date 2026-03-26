@@ -128,7 +128,7 @@ export function GradientSelector({
   return (
     <div 
       ref={containerRef}
-      className={cn("relative flex flex-col items-center gap-10 py-6 w-full overflow-visible bg-transparent", className)}
+      className={cn("relative flex items-center justify-center pt-10 pb-16 w-full overflow-visible bg-transparent", className)}
     >
       {/* Radial gradient overlay */}
       {selectedIndex >= 0 && gradientPosition && (
@@ -170,6 +170,27 @@ export function GradientSelector({
                 )}>
                     {index + 1}
                 </div>
+                {/* Label Below */}
+                <div 
+                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 cursor-pointer group whitespace-nowrap"
+                  onClick={() => handleCircleClick(option, index)}
+                >
+                  <span 
+                    className={cn(
+                      "text-xs font-semibold tracking-wide transition-all duration-300",
+                      selectedIndex === index ? "scale-105" : "opacity-40"
+                    )}
+                    style={{
+                      color: selectedIndex >= index ? option.color : '#888'
+                    }}
+                  >
+                    {option.label}
+                  </span>
+                  <div className={cn(
+                      "h-0.5 w-0.5 rounded-full transition-all duration-300",
+                      selectedIndex === index ? "scale-150" : "opacity-0"
+                  )} style={{ backgroundColor: option.color }} />
+                </div>
             </div>
             
             {/* Line (don't render after last circle) */}
@@ -179,33 +200,6 @@ export function GradientSelector({
                 style={getLineStyle(index)}
               />
             )}
-          </div>
-        ))}
-      </div>
-      
-      {/* Labels */}
-      <div className="relative z-10 flex items-center justify-between w-full max-w-[95%] px-10">
-        {options.map((option, index) => (
-          <div 
-            key={`label-${option.id}`} 
-            className="flex flex-col items-center gap-1.5 cursor-pointer group"
-            onClick={() => handleCircleClick(option, index)}
-          >
-            <span 
-              className={cn(
-                "text-xs font-semibold tracking-wide transition-all duration-300",
-                selectedIndex === index ? "scale-105" : "opacity-40"
-              )}
-              style={{
-                color: selectedIndex >= index ? option.color : '#888'
-              }}
-            >
-              {option.label}
-            </span>
-            <div className={cn(
-                "h-0.5 w-0.5 rounded-full transition-all duration-300",
-                selectedIndex === index ? "scale-150" : "opacity-0"
-            )} style={{ backgroundColor: option.color }} />
           </div>
         ))}
       </div>

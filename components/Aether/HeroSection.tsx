@@ -1,13 +1,35 @@
 "use client";
 import * as React from "react";
-import { memo } from "react";
+import { memo, useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
 import { ArrowRight } from "lucide-react";
 import { GlowingButton } from "@/components/ui/glowing-button";
+
+const START_SCALE = 0.6;
+
 export default memo(function HeroSection() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [scrollScale, setScrollScale] = useState(START_SCALE);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!sectionRef.current) return;
+            const rect = sectionRef.current.getBoundingClientRect();
+            const sectionH = sectionRef.current.offsetHeight;
+            const winH = window.innerHeight;
+            const scrolled = Math.max(0, -rect.top);
+            const maxScroll = sectionH - winH;
+            const progress = maxScroll > 0 ? Math.min(scrolled / maxScroll, 1) : 1;
+            setScrollScale(START_SCALE + progress * (1 - START_SCALE));
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <section className="relative overflow-hidden bg-black pt-32 pb-20 px-6">
+        <section ref={sectionRef} className="relative overflow-hidden bg-black pt-32 pb-20 px-6">
             {/* Premium subtle glow background */}
             <div className="hero-glow" />
 
@@ -55,8 +77,16 @@ export default memo(function HeroSection() {
                 </div>
             </div>
 
-            {/* Code window preview simulation - Desktop Integrated */}
+            {/* Code window preview - scales up as user scrolls */}
             <div className="mx-auto mt-20 mb-32 max-w-7xl [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] relative">
+                <div
+                    className="will-change-transform"
+                    style={{
+                        transform: `scale(${scrollScale})`,
+                        transformOrigin: "center top",
+                        transition: "transform 0.05s linear",
+                    }}
+                >
                     <div className="w-full relative z-20 flex justify-center py-6">
                         <div className="w-full max-w-5xl mx-auto">
                             <div className="relative group">
@@ -102,6 +132,7 @@ export default memo(function HeroSection() {
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
 
         </section>

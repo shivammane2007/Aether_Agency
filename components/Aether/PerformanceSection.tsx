@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
 import FaqSection from "@/components/Aether/FaqSection";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function PerformanceSection() {
     return (
@@ -52,9 +53,11 @@ export default function PerformanceSection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                        <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:scale-105 transition-transform duration-300">
-                            Deploy Your First Project <ArrowRight className="w-5 h-5" />
-                        </button>
+                        <Link href="/contact" className="w-full sm:w-auto">
+                            <button className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:scale-105 transition-transform duration-300">
+                                Deploy Your First Project <ArrowRight className="w-5 h-5" />
+                            </button>
+                        </Link>
                         <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent border border-[#333333] text-white font-medium text-lg hover:bg-[#111111] transition-colors">
                             Read the Documentation
                         </button>
