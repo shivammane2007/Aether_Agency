@@ -30,11 +30,11 @@ const faqs = [
 
 export default function FaqSection({ className }: { className?: string }) {
     return (
-        <section className={`py-24 relative overflow-hidden ${className || ''}`}>
+        <section id="faq" className={`py-24 relative overflow-hidden ${className || ''}`}>
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-full h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(0,112,243,0.05)_0%,transparent_60%)] pointer-events-none" />
             
-            <div className="max-w-4xl w-full mx-auto px-6 relative z-10">
+            <div className="max-w-7xl w-full mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Frequently Asked Questions
