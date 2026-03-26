@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, memo } from "react";
+import Link from "next/link";
 import { Play } from "lucide-react";
 import { AuthSwitch } from "@/components/ui/auth-switch";
 import { LimelightNav } from "@/components/ui/limelight-nav";
@@ -67,12 +68,14 @@ export default memo(function Navbar() {
 
             <div className="flex items-center gap-4">
                 <AuthSwitch className="hidden sm:flex" />
-                <button
-                    className="group flex items-center gap-2 h-11 px-6 text-[10px] font-bold uppercase tracking-widest rounded-full bg-white text-black hover:bg-gray-100 transition-colors shadow-2xl shadow-white/5 active:scale-95 transition-transform"
-                >
-                    Start Building
-                    <Play className="w-3 h-3 fill-black transition-transform group-hover:translate-x-0.5" />
-                </button>
+                <Link href="/contact">
+                    <button
+                        className="group flex items-center gap-2 h-11 px-6 text-[10px] font-bold uppercase tracking-widest rounded-full bg-white text-black hover:bg-gray-100 transition-colors shadow-2xl shadow-white/5 active:scale-95 transition-transform"
+                    >
+                        Start Building
+                        <Play className="w-3 h-3 fill-black transition-transform group-hover:translate-x-0.5" />
+                    </button>
+                </Link>
             </div>
         </nav>
     );

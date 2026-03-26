@@ -39,14 +39,14 @@ export default memo(function HeroSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link href="#" className="w-full sm:w-auto">
+                    <Link href="/contact" className="w-full sm:w-auto">
                         <GlowingButton 
                             className="w-full sm:w-auto px-8 py-4 rounded-xl text-lg"
                         >
                             Start building for free <ArrowRight className="ml-2 w-5 h-5" />
                         </GlowingButton>
                     </Link>
-                    <Link href="#" className="w-full sm:w-auto">
+                    <Link href="/contact" className="w-full sm:w-auto">
                         <GlowingButton 
                             variant="outline"
                             className="w-full sm:w-auto px-8 py-4 rounded-xl text-lg"
