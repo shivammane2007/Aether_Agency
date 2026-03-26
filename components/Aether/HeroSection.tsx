@@ -66,7 +66,7 @@ export default memo(function HeroSection() {
                             gradientConfig: {
                                 initial: { x1: "0%", x2: "0%", y1: "0%", y2: "10%" },
                                 animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
-                                transition: { duration: 3, repeat: Infinity, repeatDelay: 1 }
+                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 0, ease: "linear" }
                             }
                         },
                         {
@@ -74,7 +74,7 @@ export default memo(function HeroSection() {
                             gradientConfig: {
                                 initial: { x1: "100%", x2: "100%", y1: "0%", y2: "10%" },
                                 animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["0%", "100%"], y2: ["10%", "110%"] },
-                                transition: { duration: 3, repeat: Infinity, repeatDelay: 1.5 }
+                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 1, ease: "linear" }
                             }
                         },
                         {
@@ -82,7 +82,7 @@ export default memo(function HeroSection() {
                             gradientConfig: {
                                 initial: { x1: "0%", x2: "0%", y1: "100%", y2: "90%" },
                                 animate: { x1: ["0%", "100%"], x2: ["0%", "110%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
-                                transition: { duration: 3, repeat: Infinity, repeatDelay: 2 }
+                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 2, ease: "linear" }
                             }
                         },
                         {
@@ -90,7 +90,7 @@ export default memo(function HeroSection() {
                             gradientConfig: {
                                 initial: { x1: "100%", x2: "100%", y1: "100%", y2: "90%" },
                                 animate: { x1: ["100%", "0%"], x2: ["100%", "-10%"], y1: ["100%", "0%"], y2: ["90%", "-10%"] },
-                                transition: { duration: 3, repeat: Infinity, repeatDelay: 2.5 }
+                                transition: { duration: 1, repeat: Infinity, repeatDelay: 3, delay: 3, ease: "linear" }
                             }
                         }
                     ]}
