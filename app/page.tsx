@@ -9,6 +9,7 @@ import EcosystemSection from "@/components/Aether/EcosystemSection";
 import WorkflowSection from "@/components/Aether/WorkflowSection";
 import PricingSection from "@/components/Aether/PricingSection";
 import PerformanceSection from "@/components/Aether/PerformanceSection";
+import { Footer } from "@/components/Aether/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black selection:bg-[#0070f3]/30">
@@ -23,6 +24,9 @@ export default function Home() {
       <WorkflowSection />
       <PricingSection />
       <PerformanceSection />
+      <div className="bg-black pt-20">
+        <Footer />
+      </div>
     </main>
   );
 }
