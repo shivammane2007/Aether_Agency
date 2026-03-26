@@ -78,17 +78,17 @@ export default memo(function Navbar() {
                 visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
             } ${scrolled ? "bg-black/40 backdrop-blur-xl border-b border-[#1a1a1a]" : "bg-transparent"}`}
         >
-            <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 cursor-pointer group">
                 {/* Aether Logo Mark */}
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0070f3] to-[#3291ff] flex items-center justify-center shadow-[0_0_15px_rgba(0,112,243,0.5)]">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0070f3] to-[#3291ff] flex items-center justify-center shadow-[0_0_15px_rgba(0,112,243,0.5)] group-hover:shadow-[0_0_25px_rgba(0,112,243,0.8)] transition-all duration-300">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L2 22H22L12 2Z" fill="white" />
                     </svg>
                 </div>
-                <div className="font-semibold text-xl tracking-tight text-white ml-2">
+                <div className="font-semibold text-xl tracking-tight text-white ml-2 transition-colors duration-300">
                     Aether
                 </div>
-            </div>
+            </Link>
 
             <div className="hidden md:block">
                 <LimelightNav
