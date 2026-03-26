@@ -37,6 +37,12 @@ export function ContactSection() {
             title: "24/7 Support",
             value: "support@aether.agency",
             description: "Technical assistance whenever you need it"
+        },
+        {
+            icon: <MessageSquare className="w-5 h-5" />,
+            title: "Media & Press",
+            value: "press@aether.agency",
+            description: "For press releases and media inquiries"
         }
     ];
 
