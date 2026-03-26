@@ -58,7 +58,7 @@ export default memo(function HeroSection() {
             </div>
 
             {/* Code window preview simulation - Desktop Integrated */}
-            <div className="mx-auto mt-24 max-w-7xl [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] relative">
+            <div className="mx-auto mt-20 mb-32 max-w-7xl [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] relative">
                 <PulseBeams
                     beams={[
                         {
@@ -96,47 +96,48 @@ export default memo(function HeroSection() {
                     ]}
                     width={1200}
                     height={600}
-                    className="py-20"
+                    className="py-12"
                 >
-                    <div className="[perspective:1200px] w-full relative z-20">
-                        <div className="[transform:rotateX(10deg);] transition-transform duration-700 hover:[transform:rotateX(5deg);]">
-                            <div className="w-full max-w-5xl mx-auto glass-panel rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,112,243,0.1)] border-[#1a1a1a]">
-                                <div className="flex items-center h-10 px-4 bg-[#050505] border-b border-[#1a1a1a]">
-                                    <div className="flex gap-2">
-                                        <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
-                                        <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
-                                        <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+                    <div className="w-full relative z-20 flex justify-center py-6">
+                        <div className="w-full max-w-5xl mx-auto">
+                            <div className="relative group">
+                                {/* Centered Glow Effect */}
+                                <div className="absolute -inset-1 bg-gradient-to-r from-[#0070f3]/20 via-[#3291ff]/20 to-[#00dfd8]/20 rounded-2xl blur-3xl opacity-50 group-hover:opacity-75 transition duration-1000" />
+                                
+                                <div className="relative glass-panel rounded-2xl overflow-hidden border border-[#1a1a1a] shadow-2xl">
+                                    {/* Header Layout for Perfect Centering */}
+                                    <div className="flex items-center justify-between h-11 px-5 bg-[#050505] border-b border-[#1a1a1a] relative">
+                                        <div className="flex gap-2.5 z-10">
+                                            <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/40" />
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
+                                            <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/40" />
+                                        </div>
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                            <span className="text-[10px] text-gray-500 font-mono tracking-[0.2em] uppercase opacity-70">
+                                                index.ts — Aether Edge
+                                            </span>
+                                        </div>
+                                        <div className="w-16" /> {/* Spacer for symmetry */}
                                     </div>
-                                    <div className="mx-auto text-xs text-gray-500 font-mono">index.ts — Aether Edge</div>
-                                </div>
-                                <div className="p-6 md:p-8 bg-[#0a0a0a]/50 backdrop-blur-md font-mono text-sm md:text-base text-gray-300 overflow-x-auto">
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">1</span>
-                                        <span><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">2</span>
-                                        <span></span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">3</span>
-                                        <span><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">4</span>
-                                        <span>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">5</span>
-                                        <span>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">6</span>
-                                        <span>  &#125;</span>
-                                    </div>
-                                    <div className="flex">
-                                        <span className="text-gray-600 mr-4 select-none">7</span>
-                                        <span>&#125;);</span>
+
+                                    {/* Code Content with Leading-Relaxed and Balanced Padding */}
+                                    <div className="p-8 md:p-10 bg-[#0a0a0a]/80 backdrop-blur-2xl font-mono text-sm md:text-base text-gray-300 overflow-x-auto leading-relaxed">
+                                        {[
+                                            { line: 1, content: <><span className="text-[#ff7b72]">import</span> &#123; Aether &#125; <span className="text-[#ff7b72]">from</span> <span className="text-[#a5d6ff]">&apos;@aether/edge&apos;</span>;</> },
+                                            { line: 2, content: "" },
+                                            { line: 3, content: <><span className="text-[#ff7b72]">export default</span> <span className="text-[#d2a8ff]">Aether</span>.<span className="text-[#d2a8ff]">serve</span>(&#123;</> },
+                                            { line: 4, content: <>  <span className="text-[#79c0ff]">fetch</span>(req) &#123;</> },
+                                            { line: 5, content: <>    <span className="text-[#ff7b72]">return new</span> <span className="text-[#d2a8ff]">Response</span>(<span className="text-[#a5d6ff]">&quot;Hello from 250+ global locations instantly.&quot;</span>);</> },
+                                            { line: 6, content: <>  &#125;</> },
+                                            { line: 7, content: <>&#125;);</> }
+                                        ].map((row, i) => (
+                                            <div key={i} className="flex group/line">
+                                                <span className="text-gray-600 w-10 shrink-0 select-none opacity-40 group-hover/line:opacity-100 transition-opacity">
+                                                    {row.line}
+                                                </span>
+                                                <span className="whitespace-nowrap">{row.content}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
