@@ -62,7 +62,7 @@ const CustomAccordionContent = React.forwardRef<
         )}
         {...props}
     >
-        <div className="mt-4 ml-14">
+        <div className="mt-4">
             <div className="flex items-start gap-4 rounded-2xl bg-[#0a0a0a] border border-[#1a1a1a] p-5 shadow-lg shadow-black/50 transition-all">
                 <span className="flex-1 text-md leading-relaxed">{children}</span>
                 <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1a1a1a] transition-transform hover:scale-105">
