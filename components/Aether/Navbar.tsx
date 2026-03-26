@@ -1,14 +1,17 @@
 "use client";
 import { useState, useEffect, memo } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Play } from "lucide-react";
 import { AuthSwitch } from "@/components/ui/auth-switch";
 import { LimelightNav } from "@/components/ui/limelight-nav";
 
 export default memo(function Navbar() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [visible, setVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,11 +31,45 @@ export default memo(function Navbar() {
                 setVisible(diff < 0);
                 setLastScrollY(currentScrollY);
             }
+
+            // Scroll Spy
+            if (pathname === "/") {
+                const sections = ["product", "features", "ecosystem", "pricing"];
+                let current = "";
+                for (const section of sections) {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        // Adjust offset as needed for navbar height
+                        if (rect.top <= 150) { 
+                            current = section;
+                        }
+                    }
+                }
+                setActiveSection(current);
+            }
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll(); // Initial check
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, [lastScrollY, pathname]);
+
+    const navItems = [
+        { id: "product", label: "Product", href: "/#product" },
+        { id: "features", label: "Features", href: "/#features" },
+        { id: "ecosystem", label: "Ecosystem", href: "/#ecosystem" },
+        { id: "pricing", label: "Pricing", href: "/#pricing" },
+        { id: "contact", label: "Contact", href: "/contact" },
+    ];
+
+    let currentActiveIndex = 0;
+    if (pathname === '/contact') {
+        currentActiveIndex = 4;
+    } else {
+        const index = navItems.findIndex(item => item.id === activeSection);
+        currentActiveIndex = index !== -1 ? index : 0;
+    }
 
     return (
         <nav
@@ -54,13 +91,8 @@ export default memo(function Navbar() {
 
             <div className="hidden md:block">
                 <LimelightNav
-                    items={[
-                        { id: "product", label: "Product", href: "#product" },
-                        { id: "features", label: "Features", href: "#features" },
-                        { id: "ecosystem", label: "Ecosystem", href: "#ecosystem" },
-                        { id: "pricing", label: "Pricing", href: "#pricing" },
-                        { id: "contact", label: "Contact", href: "/contact" },
-                    ]}
+                    items={navItems}
+                    activeIndex={currentActiveIndex}
                     className="bg-transparent border-none h-12"
                     limelightClassName="bg-[#0070f3] shadow-[0_45px_30px_rgba(0,112,243,0.8)]"
                     iconContainerClassName="px-6"
