@@ -50,9 +50,8 @@ export default function WorkflowSection() {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     return (
-        <section className="py-32 bg-[#0a0a0a] border-y border-[#1a1a1a] overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
-
+        <section className="py-24 md:py-32 bg-[#0a0a0a] border-y border-[#1a1a1a] overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-black text-xs font-semibold text-[#0070f3] uppercase tracking-widest mb-6">
                         The Workflow
@@ -60,20 +59,20 @@ export default function WorkflowSection() {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
                         From idea to global execution. <span className="text-white/50">In three seconds.</span>
                     </h2>
-                    <p className="text-xl text-gray-400 font-light">
+                    <p className="text-base md:text-xl text-gray-400 font-light">
                         Forget provisioning. Focus on shipping.
                     </p>
                 </div>
 
                 <div className="flex flex-col items-center">
-                    <GradientSelector 
+                    <GradientSelector
                         options={gradientOptions}
                         selectedIndex={selectedIndex}
                         onSelectionChange={(_, index) => setSelectedIndex(index)}
-                        className="mb-12"
+                        className="mb-12 self-stretch"
                     />
 
-                    <div className="relative w-full max-w-4xl min-h-[200px] flex items-center justify-center">
+                    <div className="relative w-full max-w-4xl min-h-[220px] sm:min-h-[200px] flex items-center justify-center">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={selectedIndex}
@@ -84,16 +83,16 @@ export default function WorkflowSection() {
                                 className="text-center space-y-6"
                             >
                                 <div className="flex flex-col items-center">
-                                    <div 
+                                    <div
                                         className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-2xl border border-white/10"
                                         style={{ backgroundColor: gradientOptions[selectedIndex].color }}
                                     >
                                         {steps[selectedIndex].num}
                                     </div>
-                                    <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+                                    <h3 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-4">
                                         {steps[selectedIndex].title}
                                     </h3>
-                                    <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4">
+                                    <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4">
                                         {steps[selectedIndex].desc}
                                     </p>
                                 </div>
@@ -101,7 +100,6 @@ export default function WorkflowSection() {
                         </AnimatePresence>
                     </div>
                 </div>
-
             </div>
         </section>
     );

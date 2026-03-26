@@ -90,12 +90,12 @@ export function ContactSection() {
     ];
 
     return (
-        <section id="contact" className="relative py-24 px-6 overflow-hidden bg-black">
+        <section id="contact" className="relative py-24 px-4 sm:px-6 md:px-8 overflow-hidden bg-black">
             {/* Background Effects */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(circle_at_center,rgba(0,112,243,0.08)_0%,transparent_70%)] pointer-events-none" />
             
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     
                     {/* Left Column: Information & Branding */}
                     <div className="space-y-12">
@@ -109,11 +109,11 @@ export function ContactSection() {
                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                                 Available for new projects
                             </div>
-                            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-white leading-[0.9] mb-6">
+                            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-white leading-[0.9] mb-6">
                                 Let&apos;s build the <br />
                                 <span className="text-gradient">future together.</span>
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+                            <p className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
                                 Ready to scale your infrastructure? Our team is standing by to help you design and deploy your next global application.
                             </p>
                         </motion.div>
@@ -124,7 +124,7 @@ export function ContactSection() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="glass-panel p-6 rounded-2xl border border-[#1a1a1a] bg-[#0a0a0a]/40 backdrop-blur-xl relative group overflow-hidden"
+                            className="glass-panel p-5 sm:p-6 rounded-2xl border border-[#1a1a1a] bg-[#0a0a0a]/40 backdrop-blur-xl relative group overflow-hidden"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="flex items-center justify-between mb-8">
@@ -140,11 +140,11 @@ export function ContactSection() {
                                 <div className="text-[10px] text-gray-500 font-mono">LIVE: 2.4s ago</div>
                             </div>
                             
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-3 gap-3 sm:gap-4">
                                 {stats.map((stat, i) => (
                                     <div key={i} className="space-y-1">
                                         <p className="text-gray-500 text-[10px] uppercase tracking-wider">{stat.label}</p>
-                                        <p className={cn("text-lg font-bold tabular-nums", stat.color)}>{stat.value}</p>
+                                        <p className={cn("text-base sm:text-lg font-bold tabular-nums", stat.color)}>{stat.value}</p>
                                     </div>
                                 ))}
                             </div>
@@ -188,7 +188,7 @@ export function ContactSection() {
                         {/* Decorative background glow for form */}
                         <div className="absolute -inset-4 bg-blue-500/10 rounded-[2.5rem] blur-3xl opacity-20 pointer-events-none" />
                         
-                        <div className="relative glass-panel p-8 md:p-10 rounded-3xl border border-[#1a1a1a] bg-[#050505]/60 backdrop-blur-2xl">
+                        <div className="relative glass-panel p-6 sm:p-8 md:p-10 rounded-3xl border border-[#1a1a1a] bg-[#050505]/60 backdrop-blur-2xl">
                             <h3 className="text-2xl font-bold text-white mb-8">Send us a message</h3>
                             
                             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -202,7 +202,7 @@ export function ContactSection() {
                                                 onFocus={() => setFocused("name")}
                                                 onBlur={() => setFocused(null)}
                                                 suppressHydrationWarning
-                                                className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
+                                                className="w-full min-h-11 bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
                                             />
                                             {focused === "name" && (
                                                 <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-blue-500 pointer-events-none" />
@@ -218,7 +218,7 @@ export function ContactSection() {
                                                 onFocus={() => setFocused("email")}
                                                 onBlur={() => setFocused(null)}
                                                 suppressHydrationWarning
-                                                className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
+                                                className="w-full min-h-11 bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
                                             />
                                             {focused === "email" && (
                                                 <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-blue-500 pointer-events-none" />
@@ -234,7 +234,7 @@ export function ContactSection() {
                                             <button 
                                                 key={service}
                                                 type="button"
-                                                className="px-4 py-2 rounded-lg border border-[#1a1a1a] bg-black/20 text-gray-400 text-xs font-medium hover:border-blue-500/50 hover:text-white transition-all active:scale-95"
+                                                className="min-h-11 px-4 py-2 rounded-lg border border-[#1a1a1a] bg-black/20 text-gray-400 text-xs font-medium hover:border-blue-500/50 hover:text-white transition-all active:scale-95"
                                             >
                                                 {service}
                                             </button>
@@ -251,7 +251,7 @@ export function ContactSection() {
                                             onFocus={() => setFocused("message")}
                                             onBlur={() => setFocused(null)}
                                             suppressHydrationWarning
-                                            className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                                            className="w-full min-h-11 bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                                         />
                                         {focused === "message" && (
                                             <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-blue-500 pointer-events-none" />

@@ -44,3 +44,4 @@ next-env.d.ts
 build.log
 eslint-report.json
 lint.json
+tsconfig.tsbuildinfo

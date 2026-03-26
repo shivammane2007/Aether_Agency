@@ -4,17 +4,17 @@ import { cn } from "@/lib/utils";
 
 export default function TechnologySection() {
     return (
-        <section className="py-32 bg-[#050505] border-t border-[#1a1a1a]">
-            <div className="max-w-7xl mx-auto px-6 text-center">
+        <section className="py-24 md:py-32 bg-[#050505] border-t border-[#1a1a1a]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
 
                 <div className="mb-20 max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
                         Core Architecture
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                         Serious engineering without <span className="text-gradient">compromise.</span>
                     </h2>
-                    <p className="text-xl text-gray-400 font-light leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed">
                         Aether is built from the ground up on a custom bare-metal architecture, combining Rust with heavily customized V8 isolates. We didn&apos;t just wrap a public cloud. We built our own network fabric.
                     </p>
                 </div>

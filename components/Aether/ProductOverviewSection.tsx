@@ -2,19 +2,19 @@ import { ExpandableCard } from "@/components/ui/expandable-card";
 
 export default function ProductOverviewSection() {
     return (
-        <section id="product" className="py-32 relative bg-black overflow-hidden">
+        <section id="product" className="py-24 md:py-32 relative bg-black overflow-hidden">
             {/* Background radial gradient representing a "bottleneck" opening up */}
             <div className="absolute top-0 right-[-20%] w-[1000px] h-[1000px] bg-[radial-gradient(circle,rgba(0,112,243,0.05)_0%,transparent_60%)] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="max-w-3xl mb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+                <div className="max-w-3xl mb-16 md:mb-20">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-[#0070f3] uppercase tracking-widest mb-6">
                         The Problem
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
                         Infrastructure that gets out of your way.
                     </h2>
-                    <p className="text-xl text-gray-400 font-light leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed">
                         The real bottleneck isn&apos;t your code. It&apos;s the fragile layers of complexity between your logic and your users. Click to explore the architecture.
                     </p>
                 </div>
@@ -52,7 +52,7 @@ export default function ProductOverviewSection() {
                             <p>
                                 Aether abstracts the entire compute layer. When you push code, the Aether Engine:
                             </p>
-                            <div className="grid grid-cols-2 gap-4 my-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
                                 <div className="p-4 rounded-xl bg-[#0070f3]/5 border border-[#0070f3]/20">
                                     <div className="text-[#0070f3] font-bold mb-1 text-lg">Instant</div>
                                     <div className="text-xs text-gray-400">Global propagation in &lt;100ms</div>

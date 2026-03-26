@@ -49,14 +49,14 @@ const features = [
 
 export default function FeaturesSection() {
     return (
-        <section id="features" className="py-32 bg-[#050505] border-t border-[#1a1a1a]">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="features" className="py-24 md:py-32 bg-[#050505] border-t border-[#1a1a1a]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
-                <div className="text-center mb-24 max-w-3xl mx-auto">
+                <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
                         Core Primitives for the <span className="text-gradient">Modern Web</span>
                     </h2>
-                    <p className="text-lg text-gray-400 font-light">
+                    <p className="text-base md:text-lg text-gray-400 font-light">
                         Everything you need to build at planetary scale, built directly into the platform fabric.
                         No plugins, no configuration drift, just pure capability.
                     </p>

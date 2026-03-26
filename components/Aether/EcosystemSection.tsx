@@ -6,9 +6,9 @@ const INTEGRATIONS = ['Snowflake', 'Datadog', 'Stripe', 'Supabase'];
 
 export default function EcosystemSection() {
     return (
-        <section id="ecosystem" className="py-32 bg-black border-t border-[#1a1a1a]">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section id="ecosystem" className="py-24 md:py-32 bg-black border-t border-[#1a1a1a]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                     <div className="order-2 lg:order-1 relative">
                         <div className="grid grid-cols-2 gap-4">
@@ -27,7 +27,7 @@ export default function EcosystemSection() {
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                             A platform that scales with <br /> your <span className="text-gradient">ambition.</span>
                         </h2>
-                        <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">
+                        <p className="text-gray-400 text-base md:text-lg font-light leading-relaxed mb-8">
                             Aether isn&apos;t just a hosting tool; it&apos;s the foundational layer of your entire digital ecosystem. Extend Aether infinitely with native integrations that click together securely in seconds.
                         </p>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8">

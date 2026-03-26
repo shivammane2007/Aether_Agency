@@ -2,18 +2,18 @@ import { Terminal, Lightbulb, Zap } from "lucide-react";
 
 export default function ExperienceSection() {
     return (
-        <section className="py-32 relative bg-black border-t border-[#1a1a1a]">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="py-24 md:py-32 relative bg-black border-t border-[#1a1a1a]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1a1a1a] bg-[#0a0a0a] text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
                             Developer Experience
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                             Designed for deep <span className="italic text-[#0070f3]">flow state.</span>
                         </h2>
-                        <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
+                        <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed mb-10">
                             We obsessed over every millisecond of the developer experience, so you can obsess over your product. Aether feels like magic.
                         </p>
 

@@ -34,12 +34,12 @@ export default function FaqSection({ className }: { className?: string }) {
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-full h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(0,112,243,0.05)_0%,transparent_60%)] pointer-events-none" />
             
-            <div className="max-w-7xl w-full mx-auto px-6 relative z-10">
+            <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-base md:text-lg text-gray-400">
                         Everything you need to know about scaling with Aether.
                     </p>
                 </div>

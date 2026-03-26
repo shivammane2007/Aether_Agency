@@ -13,7 +13,7 @@ import PerformanceSection from "@/components/Aether/PerformanceSection";
 import { Footer } from "@/components/Aether/Footer";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black selection:bg-[#0070f3]/30">
+    <main className="min-h-screen bg-black overflow-x-hidden selection:bg-[#0070f3]/30">
       <Navbar />
       <HeroSection />
       <SocialProofSection />

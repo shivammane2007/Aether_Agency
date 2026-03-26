@@ -63,7 +63,7 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
   return (
-    <footer className="md:rounded-t-[3rem] relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center rounded-t-3xl border-t border-[#1a1a1a] bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,112,243,0.1),transparent)] px-6 py-12 lg:py-16 overflow-hidden">
+    <footer className="md:rounded-t-[3rem] relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center rounded-t-3xl border-t border-[#1a1a1a] bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,112,243,0.1),transparent)] px-4 sm:px-6 md:px-8 py-12 lg:py-16 overflow-hidden">
       {/* Aether styled top glow */}
       <div className="bg-[#0070f3]/30 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur-sm" />
 
