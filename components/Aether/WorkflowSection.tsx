@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GradientSelector, GradientOption } from "@/components/ui/gradient-selector";
+import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/utils";
 
 const steps = [
     { num: "1", title: "Initialize", desc: "Connect your git repository or utilize the robust Aether CLI to link your codebase." },
@@ -11,7 +12,7 @@ const steps = [
     { num: "4", title: "Global Results", desc: "Your immutable build is deployed to 250+ global edge nodes simultaneously. You are live." },
 ];
 
-const gradientOptions: GradientOption[] = [
+const gradientOptions = [
     {
         id: "step-1",
         label: "Initialize",
@@ -65,13 +66,32 @@ export default function WorkflowSection() {
                     </p>
                 </div>
 
-                <div className="flex flex-col items-center">
-                    <GradientSelector 
-                        options={gradientOptions}
-                        selectedIndex={selectedIndex}
-                        onSelectionChange={(_, index) => setSelectedIndex(index)}
-                        className="mb-12"
-                    />
+                <div className="flex flex-col items-center w-full">
+                    <div className="w-full max-w-3xl mb-16 px-4">
+                        <Slider 
+                            min={0} 
+                            max={3} 
+                            step={1} 
+                            value={selectedIndex} 
+                            onChange={(v) => setSelectedIndex(v as number)}
+                            showSteps
+                            showValue={false}
+                        />
+                        <div className="flex justify-between mt-6 px-1">
+                            {steps.map((step, idx) => (
+                                <button 
+                                    key={idx}
+                                    onClick={() => setSelectedIndex(idx)}
+                                    className={cn(
+                                        "text-xs md:text-sm font-semibold tracking-wide transition-all duration-300",
+                                        selectedIndex === idx ? "text-white scale-105" : "text-gray-600 hover:text-gray-400"
+                                    )}
+                                >
+                                    {step.title}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
 
                     <div className="relative w-full max-w-4xl min-h-[200px] flex items-center justify-center">
                         <AnimatePresence mode="wait">
