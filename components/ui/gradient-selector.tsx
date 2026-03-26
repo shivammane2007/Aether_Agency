@@ -175,7 +175,7 @@ export function GradientSelector({
             {/* Line (don't render after last circle) */}
             {index < options.length - 1 && (
               <div 
-                className={cn("flex-1 h-[1.5px] mx-4 transition-all duration-700 ease-in-out")}
+                className={cn("flex-1 h-[2px] mx-2 rounded-full transition-all duration-700 ease-in-out")}
                 style={getLineStyle(index)}
               />
             )}
