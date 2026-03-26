@@ -5,8 +5,8 @@ import { PricingSection } from "@/components/ui/pricing";
 const aetherPlans = [
     {
         name: "Starter",
-        price: "0",
-        yearlyPrice: "0",
+        price: "12",
+        yearlyPrice: "10",
         period: "month",
         features: [
             "Basic platform access",

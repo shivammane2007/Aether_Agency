@@ -278,7 +278,7 @@ export function PricingSection({
             </p>
           </div>
           <PricingToggle />
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 items-start gap-8">
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 items-stretch gap-8">
             {plans.map((plan, index) => (
               <PricingCard key={index} plan={plan} index={index} />
             ))}
@@ -313,26 +313,7 @@ function PricingToggle() {
     setIsMonthly(monthly);
 
     if (!monthly && confettiRef.current) {
-      const rect = annualBtnRef.current?.getBoundingClientRect();
-      if (!rect) return;
-
-      const originX = (rect.left + rect.width / 2) / window.innerWidth;
-      const originY = (rect.top + rect.height / 2) / window.innerHeight;
-
-      confetti({
-        particleCount: 80,
-        spread: 80,
-        origin: { x: originX, y: originY },
-        colors: [
-          "hsl(var(--primary))",
-          "hsl(var(--background))",
-          "hsl(var(--accent))",
-        ],
-        ticks: 300,
-        gravity: 1.2,
-        decay: 0.94,
-        startVelocity: 30,
-      });
+      // Confetti removed as per user request
     }
   };
 
@@ -391,7 +372,7 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
     <motion.div
       initial={{ y: 50, opacity: 0 }}
       whileInView={{
-        y: plan.isPopular && isDesktop ? -20 : 0,
+        y: 0,
         opacity: 1,
       }}
       viewport={{ once: true }}
@@ -403,7 +384,7 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
         delay: index * 0.15,
       }}
       className={cn(
-        "rounded-2xl p-8 flex flex-col relative bg-background/70 backdrop-blur-sm",
+        "rounded-2xl p-8 flex flex-col relative bg-background/70 backdrop-blur-sm h-full",
         plan.isPopular
           ? "border-2 border-primary shadow-xl"
           : "border border-border",

@@ -1,4 +1,4 @@
-import { Globe2, Zap, Network, Route, GitCommitVertical } from "lucide-react";
+import { Globe2, Zap, Network, Route, GitCommitVertical, Database } from "lucide-react";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +37,13 @@ const features = [
         description: "Push to your GitHub repository. Aether builds, heavily optimizes, and distributes the immutable bundle in under 3 seconds.",
         benefit: "10x your team&apos;s deployment velocity by entirely removing pipeline orchestration and manual deployment steps.",
         useCase: "Rapidly iterating on frontend applications and microservices securely, with automated preview URLs."
+    },
+    {
+        icon: <Database className="w-6 h-6 text-[#0070f3]" />,
+        title: "Persistent Edge Databases",
+        description: "Real-time edge storage that transparently replicates your data locally for every user across global clusters.",
+        benefit: "Ensures data compliance (GDPR/CCPA) automatically while providing sub-10ms localized record access.",
+        useCase: "Building highly localized user profiles that are available across every availability zone without sync lag."
     }
 ];
 
@@ -59,10 +66,7 @@ export default function FeaturesSection() {
                     {features.map((feature, idx) => (
                         <GlowingShadow
                             key={idx}
-                            className={cn(
-                                "rounded-2xl overflow-hidden min-h-full",
-                                idx === 3 || idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                            )}
+                            className="rounded-2xl overflow-hidden min-h-full"
                             contentClassName="p-8 h-full"
                         >
                             <div className="w-12 h-12 rounded-xl bg-[#0070f3]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
