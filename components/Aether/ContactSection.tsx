@@ -18,6 +18,15 @@ import { GlowingButton } from "@/components/ui/glowing-button";
 
 export function ContactSection() {
     const [focused, setFocused] = useState<string | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return <div className="min-h-screen bg-black" />;
+    }
 
     const contactInfo = [
         {
@@ -164,6 +173,7 @@ export function ContactSection() {
                                                 placeholder="John Doe"
                                                 onFocus={() => setFocused("name")}
                                                 onBlur={() => setFocused(null)}
+                                                suppressHydrationWarning
                                                 className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
                                             />
                                             {focused === "name" && (
@@ -179,6 +189,7 @@ export function ContactSection() {
                                                 placeholder="john@example.com"
                                                 onFocus={() => setFocused("email")}
                                                 onBlur={() => setFocused(null)}
+                                                suppressHydrationWarning
                                                 className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
                                             />
                                             {focused === "email" && (
@@ -211,6 +222,7 @@ export function ContactSection() {
                                             placeholder="Tell us about your project infrastructure needs..."
                                             onFocus={() => setFocused("message")}
                                             onBlur={() => setFocused(null)}
+                                            suppressHydrationWarning
                                             className="w-full bg-black/40 border border-[#1a1a1a] rounded-xl px-4 py-3 text-white placeholder:text-gray-700 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                                         />
                                         {focused === "message" && (

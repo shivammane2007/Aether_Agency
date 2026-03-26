@@ -59,6 +59,7 @@ export default memo(function Navbar() {
                         { id: "features", label: "Features", href: "#features" },
                         { id: "ecosystem", label: "Ecosystem", href: "#ecosystem" },
                         { id: "pricing", label: "Pricing", href: "#pricing" },
+                        { id: "contact", label: "Contact", href: "/contact" },
                     ]}
                     className="bg-transparent border-none h-12"
                     limelightClassName="bg-[#0070f3] shadow-[0_45px_30px_rgba(0,112,243,0.8)]"
