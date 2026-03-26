@@ -2,20 +2,42 @@
 import { useState, useEffect, memo } from "react";
 import { Play } from "lucide-react";
 import { AuthSwitch } from "@/components/ui/auth-switch";
+import { LimelightNav } from "@/components/ui/limelight-nav";
 
 export default memo(function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll);
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY < 10) {
+                setVisible(true);
+                setScrolled(false);
+                setLastScrollY(currentScrollY);
+                return;
+            }
+
+            setScrolled(currentScrollY > 20);
+
+            const diff = currentScrollY - lastScrollY;
+            if (Math.abs(diff) > 10) {
+                setVisible(diff < 0);
+                setLastScrollY(currentScrollY);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 py-4 transition-all duration-300 ${scrolled ? "bg-black/50 backdrop-blur-xl border-b border-[#1a1a1a]" : "bg-transparent"
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 py-4 transition-all duration-500 ease-in-out ${
+                visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            } ${scrolled ? "bg-black/40 backdrop-blur-xl border-b border-[#1a1a1a]" : "bg-transparent"}`}
         >
             <div className="flex items-center gap-2">
                 {/* Aether Logo Mark */}
@@ -29,17 +51,24 @@ export default memo(function Navbar() {
                 </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href="#product" className="hover:text-white transition-colors">Product</a>
-                <a href="#features" className="hover:text-white transition-colors">Features</a>
-                <a href="#ecosystem" className="hover:text-white transition-colors">Ecosystem</a>
-                <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+            <div className="hidden md:block">
+                <LimelightNav
+                    items={[
+                        { id: "product", label: "Product", href: "#product" },
+                        { id: "features", label: "Features", href: "#features" },
+                        { id: "ecosystem", label: "Ecosystem", href: "#ecosystem" },
+                        { id: "pricing", label: "Pricing", href: "#pricing" },
+                    ]}
+                    className="bg-transparent border-none h-12"
+                    limelightClassName="bg-[#0070f3] shadow-[0_45px_30px_rgba(0,112,243,0.8)]"
+                    iconContainerClassName="px-6"
+                />
             </div>
 
             <div className="flex items-center gap-4">
                 <AuthSwitch className="hidden sm:flex" />
                 <button
-                    className="flex items-center gap-2 h-11 px-6 text-[10px] font-bold uppercase tracking-widest rounded-full bg-white text-black hover:bg-gray-100 transition-colors shadow-2xl shadow-white/5 active:scale-95 transition-transform"
+                    className="group flex items-center gap-2 h-11 px-6 text-[10px] font-bold uppercase tracking-widest rounded-full bg-white text-black hover:bg-gray-100 transition-colors shadow-2xl shadow-white/5 active:scale-95 transition-transform"
                 >
                     Start Building
                     <Play className="w-3 h-3 fill-black transition-transform group-hover:translate-x-0.5" />
